@@ -120,7 +120,7 @@ section .section-title {
                                   BLOG PAGES
  */
 .row .col-sm-3{
-  box-shadow: 0 15px 30px #00000036;
+  box-shadow: 0 2px 4px #00000024;
   border: none;
   border-radius: 3px;
   padding: 24px;
