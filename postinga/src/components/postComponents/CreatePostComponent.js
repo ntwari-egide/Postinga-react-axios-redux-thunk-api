@@ -25,11 +25,11 @@ export default function CreatePostComponent(){
                     <h2 className="align-center  font-weight-bold">Create Post</h2><br/><br/>
                     <form>
                         <div className="form-group">
-                           <input type="text" name="title" value={postState.title}/><br/>
+                           <input type="text" name="title"  onChange={changePostValue} value={postState.title}/><br/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleFormControlInput1">Post Content</label>
-                            <textarea name="body" value={postState.body} type="text" name="testimonialBody" placeholder="Enter testimony body" rows="8" ></textarea>
+                            <textarea name="body" onChange={changePostValue} value={postState.body} type="text" name="testimonialBody" placeholder="Enter testimony body" rows="8" ></textarea>
                         </div>
                     </form>
 
