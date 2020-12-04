@@ -24,6 +24,8 @@ export default function WelcomeComponent(){
     return (
         <Content.Provider value={dispatch}>
             <div   className="container content">
+                <br/>
+                <Link type="button" class="btn btn-primary" to="/create-post">Add post</Link>
                 <br /><br/>
                 <h4 className="text-center">All new posts : </h4><br />
                 <div className="row">
