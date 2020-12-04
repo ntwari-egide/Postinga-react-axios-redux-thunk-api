@@ -20,6 +20,11 @@ export default function CreatePostComponent(){
         })
     }
 
+    const submitPost = (event) => {
+        console.log(postState)
+        event.preventDefault()
+    }
+
     return (
             <div>
                 <div className="card">
@@ -34,7 +39,7 @@ export default function CreatePostComponent(){
                         </div>
                     </form>
 
-                    <input type="submit" value="Post Testimony"/>
+                    <input type="submit" value="Post Testimony" onClick={submitPost}/>
                 </div>
             </div>
     )
