@@ -8,7 +8,11 @@ export default function postReducer(state = initialPostState,action){
             return state;
 
         case actions.RESET_POSTS:
-            return action.payload;
+            return {
+                ...state,
+                initialPostState: [...initialPostState,action.payload]
+            }
+
 
         case actions.GET_POST_BY_ID:
             return state.filter(post => post.id === action.payload.id )

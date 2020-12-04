@@ -1,11 +1,13 @@
 import './App.css';
 import RootComponent from "./components/RootComponent";
+import {Provider} from "react-redux";
+import postsStore from "./store/postsStore";
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={postsStore} className="App">
       <RootComponent />
-    </div>
+    </Provider>
   );
 }
 

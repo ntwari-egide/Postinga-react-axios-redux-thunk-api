@@ -114,3 +114,14 @@ section .section-title {
     margin-bottom: 10px;
   }
 }
+
+/*
+
+                                  BLOG PAGES
+ */
+.content .row div{
+  box-shadow: 0 5px 10px #cacaca;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+}

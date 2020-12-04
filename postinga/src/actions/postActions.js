@@ -6,6 +6,7 @@ export  const resetPostStore = async () => {
     const dataReturned = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
     // console.log("Data returned : ",dataReturned.data)
     postsStore.dispatch(resetPosts(dataReturned.data))
+    // return dataReturned.data
 }
 
 export const getAllPosts =  async () => {
