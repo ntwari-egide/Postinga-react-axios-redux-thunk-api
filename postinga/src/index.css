@@ -23,7 +23,6 @@ body{
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   top: 3px;
-  line-height: 12px;
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
@@ -34,7 +33,7 @@ body{
   .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
     text-align: center;
     display: table-cell;
-    height: 70px;
+    height: 10%;
     vertical-align: middle;
     padding-top: 0;
     padding-bottom: 0;
@@ -57,7 +56,7 @@ body{
   .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
     text-align: center;
     display: table-cell;
-    height: 70px;
+    height: 10%;
     vertical-align: middle;
     padding-top: 0;
     padding-bottom: 0;
@@ -80,7 +79,7 @@ body{
   .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
     text-align: center;
     display: table-cell;
-    height: 70px;
+    height: 10%;
     vertical-align: middle;
     padding-top: 0;
     padding-bottom: 0;
@@ -103,7 +102,7 @@ body{
   .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
     text-align: center;
     display: table-cell;
-    height: 70px;
+    height: 10%;
     vertical-align: middle;
     padding-top: 0;
     padding-bottom: 0;
