@@ -9,6 +9,8 @@ export default function RootComponent(){
             <div>
                 <NavbarComponent />
                 <Route exact path="/" component={WelcomeComponent} />
+                <Route exact path="/create-post"/>
+                <Route exact path="/edit-post"/>
                 <FooterComponent />
             </div>
         </Router>
