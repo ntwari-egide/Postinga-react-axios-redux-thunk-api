@@ -21,7 +21,7 @@ export const getPostById = async (id) => {
 
 export const createPost = async (post) => {
     const dataReturned  = await axios.post(`http://jsonplaceholder.typicode.com/posts`,post)
-    postsStore.dispatch(createPostAction(dataReturned.data))
+    postsStore.dispatch(createPostAction(post))
 }
 
 export const createPostAction = (post) => {

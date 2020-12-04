@@ -1,5 +1,6 @@
 import React, {useContext, useState} from "react"
 import {useDispatch} from "react-redux";
+import * as postActions from "../../actions/postActions"
 
 const Context = React.createContext
 
@@ -21,7 +22,7 @@ export default function CreatePostComponent(){
     }
 
     const submitPost = (event) => {
-        console.log(postState)
+        postActions.createPost(postState)
         event.preventDefault()
     }
 
