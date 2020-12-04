@@ -10,6 +10,7 @@ export default function CreatePostComponent(){
 
     const dispatch = useDispatch()
     const [postState,setPostState] = useState({
+        id: 3,
         userId: 2,
         title: "",
         body: ""
