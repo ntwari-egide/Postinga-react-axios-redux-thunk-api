@@ -14,7 +14,7 @@ export default function CreatePostComponent(){
     })
 
     const changePostValue = (event) => {
-        console.log(event.target.value)
+        // console.log(event.target.value)
         setPostState({
             ...postState,
             [event.target.name] : event.target.value
