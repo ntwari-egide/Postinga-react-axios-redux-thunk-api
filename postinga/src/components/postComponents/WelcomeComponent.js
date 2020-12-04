@@ -2,7 +2,7 @@ import React, { useState, useEffect,useContext } from 'react';
 import postsStore from "../../store/postsStore";
 import {Provider, useSelector,useDispatch} from "react-redux";
 import * as postsActions from "../../actions/postActions"
-
+import * as postActions from "./../../actions/postActions"
 
 const Content = React.createContext()
 
@@ -39,11 +39,15 @@ function ListofPosts ({allPosts}){
 }
 
 function CurrentPost({...postContent}){
+    const dispatch  = useContext(Content)
     return (
         <div>
             <div className="col-md-3">
                 <h5>Title : {postContent.title}</h5>
                 <p>Message  : {postContent.body}</p>
+                <button onClick={() => {
+                    postActions.deletePost(postContent.id)
+                }}>Delete</button>
             </div>
 
             <br/>
