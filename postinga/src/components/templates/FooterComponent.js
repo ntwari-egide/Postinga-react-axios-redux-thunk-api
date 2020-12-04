@@ -78,7 +78,7 @@ export default function FooterComponent(){
                                                                   href="https://www.sunlimetech.com"
                                                                   target="_blank">Sunlimetech</a></p>
                     </div>
-                    <hr>
+                    <hr />
                 </div>
             </div>
         </section>
