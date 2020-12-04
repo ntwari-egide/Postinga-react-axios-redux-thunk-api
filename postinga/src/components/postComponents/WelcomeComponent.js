@@ -21,13 +21,15 @@ export default function WelcomeComponent(){
     console.log(allPostsState)
 
     return (
-        <Content.Provider value={dispatch}  className="container content">
-            <br /><br/>
-            <h4>All new posts : </h4><br />
-            <div className="row">
-                <ListofPosts allPosts={allPostsState} />
+        <Content.Provider value={dispatch}>
+            <div   className="container content">
+                <br /><br/>
+                <h4 className="text-center">All new posts : </h4><br />
+                <div className="row">
+                    <ListofPosts allPosts={allPostsState} />
+                </div>
+                <br/>
             </div>
-            <br/>
         </Content.Provider>
     )
 
@@ -45,7 +47,7 @@ function CurrentPost({...postContent}){
             <div className="col-sm-3">
                 <h6>Title : {postContent.title}</h6>
                 <p>Message  : {postContent.body}</p>
-                <button onClick={() => {
+                <button  type="button" class="btn btn-danger" onClick={() => {
                     postActions.deletePost(postContent.id)
                 }}>Delete</button>
             </div>
