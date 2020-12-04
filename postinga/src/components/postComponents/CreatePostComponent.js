@@ -1,16 +1,18 @@
 import React, {useContext, useState} from "react"
 import {useDispatch} from "react-redux";
 import * as postActions from "../../actions/postActions"
+import {useHistory} from "react-router-dom"
 
 const Context = React.createContext
 
 export default function CreatePostComponent(){
+    let history = useHistory()
 
     const dispatch = useDispatch()
     const [postState,setPostState] = useState({
         userId: 2,
-        title: "FIRST nesciunt quas odio ",
-        body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+        title: "",
+        body: ""
     })
 
     const changePostValue = (event) => {
@@ -23,6 +25,7 @@ export default function CreatePostComponent(){
 
     const submitPost = (event) => {
         postActions.createPost(postState)
+        history.push("/")
         event.preventDefault()
     }
 
