@@ -120,11 +120,12 @@ section .section-title {
                                   BLOG PAGES
  */
 .row .col-sm-3{
-  box-shadow: 0 5px 10px #cacaca;
+  box-shadow: 0 15px 30px #00000036;
   border: none;
   border-radius: 3px;
-  padding: 10px;
-  margin-left: 90px;
+  padding: 24px;
+  margin-left: 60px;
+  margin-top: 30px;
 }
 
 
