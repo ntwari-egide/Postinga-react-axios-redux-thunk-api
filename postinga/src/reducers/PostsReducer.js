@@ -1,6 +1,19 @@
 import * as actions from "../actions/postActionTypes"
 
-let initialPostState = [];
+let initialPostState = [
+    {
+        userId: 2,
+        id: 1,
+        title: "FIRST nesciunt quas odio ",
+        body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+    },
+    {
+        userId: 2,
+        id: 2,
+        title: "FIRST nesciunt quas odio ",
+        body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+    }
+];
 
 export default function postReducer(state = initialPostState,action){
     switch (action.type){
