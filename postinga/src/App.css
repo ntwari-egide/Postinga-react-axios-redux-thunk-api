@@ -119,11 +119,12 @@ section .section-title {
 
                                   BLOG PAGES
  */
-.content .row div{
+.row .col-sm-3{
   box-shadow: 0 5px 10px #cacaca;
   border: none;
   border-radius: 3px;
   padding: 10px;
+  margin-left: 90px;
 }
 
 
