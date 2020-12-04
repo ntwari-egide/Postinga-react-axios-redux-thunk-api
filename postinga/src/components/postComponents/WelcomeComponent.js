@@ -3,6 +3,7 @@ import postsStore from "../../store/postsStore";
 import {Provider, useSelector,useDispatch} from "react-redux";
 import * as postsActions from "../../actions/postActions"
 import * as postActions from "./../../actions/postActions"
+import {Link} from "react-router-dom";
 
 const Content = React.createContext()
 
@@ -47,9 +48,17 @@ function CurrentPost({...postContent}){
             <div className="col-sm-3">
                 <h6>Title : {postContent.title}</h6>
                 <p>Message  : {postContent.body}</p>
+                <Link type="button" class="btn btn-primary" to="/edit" to={{pathname: "/edit-post",state: postContent}}>Edit</Link>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                 <button  type="button" class="btn btn-danger" onClick={() => {
                     postActions.deletePost(postContent.id)
                 }}>Delete</button>
+
             </div>
 
 
