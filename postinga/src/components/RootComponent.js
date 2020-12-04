@@ -1,5 +1,10 @@
 import React from "react"
+import NavbarComponent from "./templates/NavbarComponent";
 
 export default function RootComponent(){
-    return " Added the root component";
+    return (
+        <div>
+            <NavbarComponent />
+        </div>
+    )
 }
