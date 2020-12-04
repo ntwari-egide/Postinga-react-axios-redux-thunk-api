@@ -22,7 +22,8 @@ export default function WelcomeComponent(){
 
     return (
         <Content.Provider value={dispatch}  className="container content">
-            <h4>All new posts : </h4>
+            <br /><br/>
+            <h4>All new posts : </h4><br />
             <div className="row">
                 <ListofPosts allPosts={allPostsState} />
             </div>
@@ -41,16 +42,14 @@ function ListofPosts ({allPosts}){
 function CurrentPost({...postContent}){
     const dispatch  = useContext(Content)
     return (
-        <div>
-            <div className="col-md-3">
-                <h5>Title : {postContent.title}</h5>
+            <div className="col-sm-3">
+                <h6>Title : {postContent.title}</h6>
                 <p>Message  : {postContent.body}</p>
                 <button onClick={() => {
                     postActions.deletePost(postContent.id)
                 }}>Delete</button>
             </div>
 
-            <br/>
-        </div>
+
     )
 }
