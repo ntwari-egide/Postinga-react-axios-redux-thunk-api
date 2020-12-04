@@ -6,11 +6,18 @@ const Context = React.createContext
 export default function CreatePostComponent(){
 
     const dispatch = useDispatch()
-    const [postState,createPost] = useState({
+    const [postState,setPostState] = useState({
         userId: 2,
         title: "FIRST nesciunt quas odio ",
         body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     })
+
+    const changePostValue = (event) => {
+        setPostState({
+            ...postState,
+            [event.target.name] : event.target.value()
+        })
+    }
 
     return (
             <div>
