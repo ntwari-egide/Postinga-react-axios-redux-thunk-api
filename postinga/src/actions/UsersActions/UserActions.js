@@ -2,8 +2,8 @@ import userStore from "../../store/UsersStore";
 import * as actions from "./UsersActionTypes"
 import axios from  "axios"
 
-export const get_all_users = () => {
-    const allUsersHandler =  axios.get(`https://jsonplaceholder.typicode.com/users`)
+export const get_all_users = async () => {
+    const allUsersHandler = await  axios.get(`https://jsonplaceholder.typicode.com/users`)
     userStore.dispatch(getAllUsersAction(allUsersHandler.data))
 }
 
@@ -14,8 +14,8 @@ const getAllUsersAction = (allUsers) => {
     }
 }
 
-export const getUser = (id) => {
-    const userHandler =  axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+export const getUser = async (id) => {
+    const userHandler =  await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
 }
 
 const getUserAction = (id) => {
