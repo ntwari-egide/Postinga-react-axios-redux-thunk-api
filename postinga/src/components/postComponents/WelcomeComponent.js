@@ -21,7 +21,7 @@ export default function WelcomeComponent(){
     const dispatch = useDispatch()
 
     const allPostsState = useSelector(postState)
-    console.log(allPostsState)
+    // console.log(allPostsState)
 
     return (
         <Content.Provider value={dispatch}>
