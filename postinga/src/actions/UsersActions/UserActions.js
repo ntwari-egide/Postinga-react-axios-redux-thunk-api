@@ -54,7 +54,7 @@ const updateUserAction = (user) => {
 
 export const deleteUser =  async (id) => {
     await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-
+    userStore.dispatch(deleteUser(id))
 }
 
 const deleteUserAction = (id) => {
