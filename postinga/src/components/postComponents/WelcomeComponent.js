@@ -55,7 +55,7 @@ function CurrentPost({...postContent}){
         return commentStore.getState()
     }
 
-    const allComments = useSelector(commentStore)
+    const allComments = useSelector(commentState)
 
     console.log("All comments : ",allComments)
 
