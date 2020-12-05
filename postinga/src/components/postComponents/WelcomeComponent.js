@@ -47,17 +47,6 @@ function ListofPosts ({allPosts}){
 }
 
 function CurrentPost({...postContent}){
-    useEffect(()=>{
-        commentActions.get_comment_by_oid(postContent.id)
-    },[])
-
-    const commentState =() => {
-        return commentStore.getState()
-    }
-
-    const allComments = useSelector(commentState)
-
-    console.log("All comments : ",allComments)
 
     const dispatch  = useContext(Content)
     return (
@@ -79,4 +68,18 @@ function CurrentPost({...postContent}){
 
 
     )
+}
+
+function Get_Comment_by_Id({postId}){
+    useEffect(()=>{
+        commentActions.get_comment_by_oid(postId)
+    },[])
+
+    const commentState =() => {
+        return commentStore.getState()
+    }
+
+    const allComments = useSelector(commentState)
+
+    console.log("All comments : ",allComments)
 }
