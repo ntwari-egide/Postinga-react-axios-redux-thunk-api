@@ -53,6 +53,9 @@ function CurrentPost({...postContent}){
             <div className="col-sm-3">
                 <h6>Title : {postContent.title}</h6>
                 <p>Message  : {postContent.body}</p>
+
+                <Get_Comment_by_Id postId={postContent.id} />
+
                 <Link type="button" class="btn btn-primary" to="/edit" to={{pathname: "/edit-post",state: postContent}}>Edit</Link>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,4 +85,6 @@ function Get_Comment_by_Id({postId}){
     const allComments = useSelector(commentState)
 
     console.log("All comments : ",allComments)
+
+    return "get"
 }
