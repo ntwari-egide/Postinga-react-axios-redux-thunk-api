@@ -3,6 +3,7 @@ import postsStore from "../../store/postsStore";
 import {Provider, useSelector,useDispatch} from "react-redux";
 import * as postsActions from "../../actions/postActions"
 import * as postActions from "./../../actions/postActions"
+import * as commentActions from "../../actions/CommentActions"
 import {Link} from "react-router-dom";
 
 const Content = React.createContext()
@@ -45,6 +46,9 @@ function ListofPosts ({allPosts}){
 }
 
 function CurrentPost({...postContent}){
+    useEffect({
+
+    },[])
     const dispatch  = useContext(Content)
     return (
             <div className="col-sm-3">
