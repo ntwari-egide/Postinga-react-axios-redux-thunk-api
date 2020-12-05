@@ -3,7 +3,7 @@ import postsStore from "../../store/postsStore";
 import {Provider, useSelector,useDispatch} from "react-redux";
 import * as postsActions from "../../actions/postActions"
 import * as postActions from "./../../actions/postActions"
-import * as commentActions from "../../actions/CommentActions"
+import get_comment_by_oid from "../../actions/CommentActions";
 import {Link} from "react-router-dom";
 
 const Content = React.createContext()
@@ -47,7 +47,7 @@ function ListofPosts ({allPosts}){
 
 function CurrentPost({...postContent}){
     useEffect({
-
+        get_comment_by_oid()
     },[])
     const dispatch  = useContext(Content)
     return (

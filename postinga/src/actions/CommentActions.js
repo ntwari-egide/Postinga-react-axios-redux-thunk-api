@@ -1,7 +1,8 @@
 import axios from "axios"
 import * as commentActionType from "../actions/CommentActionType"
 import commentStore from "../store/CommentStore";
-export const get_comment_by_oid = (id) => {
+
+const get_comment_by_oid = (id) => {
     axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         .then(response => {
             commentStore.dispatch(setCommentAction(response))
@@ -14,3 +15,5 @@ const setCommentAction = (comments) => {
         payload: comments
     }
 }
+
+export default get_comment_by_oid
