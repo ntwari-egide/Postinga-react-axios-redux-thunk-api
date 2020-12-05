@@ -4,8 +4,8 @@ import commentStore from "../store/CommentStore";
 
 export  const get_comment_by_oid = async (id) => {
    const comments = await  axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
-    commentStore.dispatch(setCommentAction(comments))
-    console.log("data found ;",comments)
+    commentStore.dispatch(setCommentAction(comments.data))
+    console.log("data found : ",comments.data)
 }
 
 export  const setCommentAction = (comments) => {
