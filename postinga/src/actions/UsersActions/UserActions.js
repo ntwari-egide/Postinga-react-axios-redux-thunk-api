@@ -16,6 +16,7 @@ const getAllUsersAction = (allUsers) => {
 
 export const getUser = async (id) => {
     const userHandler =  await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+    userStore.dispatch(getUserAction(id))
 }
 
 const getUserAction = (id) => {
@@ -24,5 +25,29 @@ const getUserAction = (id) => {
         payload: {
             id: id
         }
+    }
+}
+
+export const addUser = async (user) => {
+    await  axios.post(`https://jsonplaceholder.typicode.com/users`,user)
+    userStore.dispatch(addUserAction(user))
+}
+
+const addUserAction  = (user) => {
+    return {
+        type: actions.ADD_USER,
+        payload: user
+    }
+}
+
+export const updateUser  = async (user) => {
+    await axios.put(`https://jsonplaceholder.typicode.com/users/${user.id}`,user)
+
+}
+
+const updateUserAction = (user) => {
+    return {
+        type: actions.UPDATE_USER,
+        payload: user
     }
 }
