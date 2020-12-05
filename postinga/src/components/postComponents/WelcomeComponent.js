@@ -74,6 +74,9 @@ function CurrentPost({...postContent}){
 }
 
 function Get_Comment_by_Id({postId}){
+    commentStore.subscribe(()=>{
+        console.log("Comment changed : ",commentStore.getState())
+    })
     useEffect(()=>{
         commentActions.get_comment_by_oid(postId)
     },[])
