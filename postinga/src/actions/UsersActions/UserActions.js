@@ -17,3 +17,12 @@ const getAllUsersAction = (allUsers) => {
 export const getUser = (id) => {
     const userHandler =  axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
 }
+
+const getUserAction = (id) => {
+    return {
+        type: actions.GET_USER,
+        payload: {
+            id: id
+        }
+    }
+}
