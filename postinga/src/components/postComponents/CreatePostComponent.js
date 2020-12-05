@@ -41,7 +41,7 @@ export default function CreatePostComponent(){
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleFormControlInput1">Post Content : </label><br/>
-                            <textarea name="body" onChange={changePostValue} value={postState.body} type="text" name="testimonialBody" placeholder="Enter testimony body" rows="8" cols="73"></textarea>
+                            <textarea name="body" onChange={changePostValue} value={postState.body} type="text" placeholder="Enter testimony body" rows="8" cols="73"></textarea>
                         </div>
                     </form>
 
