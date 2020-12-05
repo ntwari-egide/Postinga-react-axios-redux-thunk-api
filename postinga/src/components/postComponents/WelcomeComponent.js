@@ -3,8 +3,9 @@ import postsStore from "../../store/postsStore";
 import {Provider, useSelector,useDispatch} from "react-redux";
 import * as postsActions from "../../actions/postActions"
 import * as postActions from "./../../actions/postActions"
-import get_comment_by_oid from "../../actions/CommentActions";
+import * as commentActions from "../../actions/CommentActions"
 import {Link} from "react-router-dom";
+import commentStore from "../../store/CommentStore";
 
 const Content = React.createContext()
 
@@ -46,9 +47,18 @@ function ListofPosts ({allPosts}){
 }
 
 function CurrentPost({...postContent}){
-    useEffect({
-        get_comment_by_oid()
+    useEffect(()=>{
+        commentActions.get_comment_by_oid(postContent.id)
     },[])
+
+    const commentState =() => {
+        return commentStore.getState()
+    }
+
+    const allComments = () => {
+
+    }
+
     const dispatch  = useContext(Content)
     return (
             <div className="col-sm-3">
