@@ -90,7 +90,7 @@ function Get_Comment_by_Id({postId}){
 
     return (
         <div>
-            <h4 className="text-center">Comments : </h4><br />
+            <h6 className="text-center">Comments : </h6><br />
             <div className="row">
                 <ListOfComments allComments={allComments} />
             </div>

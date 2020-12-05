@@ -119,8 +119,9 @@ section .section-title {
 
                                   BLOG PAGES
  */
-.row div .col-sm-3 {
-  width: 100%;
+.row .col-sm-8 {
+  padding-left: 29px;
+  font-size: 11px
 }
 
 .row .col-sm-3{
