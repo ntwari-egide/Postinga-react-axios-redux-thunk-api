@@ -4,6 +4,7 @@ const initialState = []
 export default  function UsersReducer(state = initialState,action){
     switch (action.type) {
         case actionTypes.GET_ALL_USERS:
+            console.log("We have : ",action.paylaod)
             return action.paylaod
 
         case actionTypes.GET_USER:
