@@ -42,12 +42,24 @@ const addUserAction  = (user) => {
 
 export const updateUser  = async (user) => {
     await axios.put(`https://jsonplaceholder.typicode.com/users/${user.id}`,user)
-
+    userStore.dispatch(updateUser(user))
 }
 
 const updateUserAction = (user) => {
     return {
         type: actions.UPDATE_USER,
         payload: user
+    }
+}
+
+export const deleteUser =  async (id) => {
+    await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+
+}
+
+const deleteUserAction = (id) => {
+    return {
+        type: actions.DELETE_USER,
+        payload: id
     }
 }
