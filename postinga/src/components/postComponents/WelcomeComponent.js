@@ -21,7 +21,7 @@ export default function WelcomeComponent(){
     const dispatch = useDispatch()
 
     const allPostsState = useSelector(postState)
-    // console.log(allPostsState)
+    console.log(allPostsState)
 
     return (
         <Content.Provider value={dispatch}>
@@ -88,7 +88,32 @@ function Get_Comment_by_Id({postId}){
 
     const allComments = useSelector(commentState)
 
-    console.log("All comments : ",allComments)
+    // console.log("All comments : ",allComments)
 
-    return "get"
+    return (
+        <div>
+            <h4 className="text-center">Comments : </h4><br />
+            <div className="row">
+                <ListOfComments allComments={allComments} />
+            </div>
+        </div>
+    )
+}
+
+function ListOfComments({allComments}){
+    return allComments.map(comment =>
+        <CommentContent key={comment.id} {...comment} />
+    )
+}
+
+function CommentContent({...comment}){
+    console.log(comment)
+    return (
+        <div>
+            <div className="col-sm-3">
+                <h6>Title : {comment.Name}</h6>
+                <p>Message  : {comment.Body}</p>
+            </div>
+        </div>
+    )
 }
