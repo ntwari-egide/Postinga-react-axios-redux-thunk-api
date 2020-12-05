@@ -8,7 +8,6 @@ export const get_all_users = async () => {
 }
 
 const getAllUsersAction = (allUsers) => {
-    console.log("axios : ",allUsers)
     return {
         type: actions.GET_ALL_USERS,
         payload: allUsers

@@ -5,7 +5,9 @@ export default  function UsersReducer(state = initialState,action){
     switch (action.type) {
         case actionTypes.GET_ALL_USERS:
             // console.log("We have : ",action.payload)
-            return action.paylaod
+            return [...state,
+                action.payload]
+
 
         case actionTypes.GET_USER:
             return state.filter(user => user.id === action.payload.id)

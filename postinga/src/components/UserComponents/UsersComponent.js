@@ -9,6 +9,10 @@ export default function UsersComponent(){
         userActions.get_all_users()
     },[])
 
+    // userStore.subscribe(() => {
+    //     console.log("Store changed: ",userStore.getState())
+    // })
+
     const allUsersHandler = () => {
        return  userStore.getState()
     }
