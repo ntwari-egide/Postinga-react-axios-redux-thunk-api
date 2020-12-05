@@ -88,8 +88,6 @@ function Get_Comment_by_Id({postId}){
 
     const allComments = useSelector(commentState)
 
-    // console.log("All comments : ",allComments)
-
     return (
         <div>
             <h4 className="text-center">Comments : </h4><br />
@@ -110,9 +108,10 @@ function CommentContent({...comment}){
     console.log(comment)
     return (
         <div>
-            <div className="col-sm-3">
-                <h6>Title : {comment.Name}</h6>
+            <div className="col-sm-8">
+                <p className="text-primary">Title : {comment.Name}</p>
                 <p>Message  : {comment.Body}</p>
+                <p className="text-success">commented by : {comment.Email}</p>
             </div>
         </div>
     )
