@@ -18,14 +18,14 @@ export default function WelcomeComponent(){
     },[]);
 
     const postState =  () => {
-        return postsStore.getState();
+        return store.getState();
     }
     const dispatch = useDispatch()
 
     const allState = useSelector(postState)
     console.log("All store : ",allState)
 
-    let allPostsState = allState
+    let allPostsState = allState.posts
 
     return (
         <Content.Provider value={dispatch}>
