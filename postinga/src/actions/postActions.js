@@ -1,11 +1,12 @@
 import * as actions from "./postActionTypes";
 import axios from "axios"
 import postsStore from "../store/postsStore";
+import store from "../store";
 
 export  const resetPostStore = async () => {
     const dataReturned = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
     // console.log("Data returned : ",dataReturned.data)
-    postsStore.dispatch(resetPosts(dataReturned.data))
+    store.dispatch(resetPosts(dataReturned.data))
     // return dataReturned.data
 }
 
