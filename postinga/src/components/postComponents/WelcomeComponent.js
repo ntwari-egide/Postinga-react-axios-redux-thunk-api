@@ -18,14 +18,14 @@ export default function WelcomeComponent(){
     },[]);
 
     const postState =  () => {
-        return store.getState();
+        return postsStore.getState();
     }
     const dispatch = useDispatch()
 
     const allState = useSelector(postState)
-    console.log("All store",allState.posts)
+    console.log("All store : ",allState)
 
-    let allPostsState = allState.posts
+    let allPostsState = allState
 
     return (
         <Content.Provider value={dispatch}>
@@ -60,14 +60,14 @@ function CurrentPost({...postContent}){
 
                 <CommentComponent postId={postContent.id} />
 
-                <Link type="button" class="btn btn-primary" to="/edit" to={{pathname: "/edit-post",state: postContent}}>Edit</Link>
+                <Link type="button" className="btn btn-primary" to="/edit" to={{pathname: "/edit-post",state: postContent}}>Edit</Link>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <button  type="button" class="btn btn-danger" onClick={() => {
+                <button  type="button" className="btn btn-danger" onClick={() => {
                     postActions.deletePost(postContent.id)
                 }}>Delete</button>
 
