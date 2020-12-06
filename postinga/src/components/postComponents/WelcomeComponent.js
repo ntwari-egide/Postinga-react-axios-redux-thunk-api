@@ -13,6 +13,7 @@ const Content = React.createContext()
 export default function WelcomeComponent(){
 
     useEffect(() => {
+        console.log("State changed ")
         postsActions.resetPostStore()
     },[]);
 
@@ -21,14 +22,16 @@ export default function WelcomeComponent(){
     }
     const dispatch = useDispatch()
 
-    const allPostsState = useSelector(postState)
-    console.log(allPostsState)
+    const allState = useSelector(postState)
+    console.log("All store",allState.posts)
+
+    let allPostsState = allState.posts
 
     return (
         <Content.Provider value={dispatch}>
             <div   className="container content">
                 <br/>
-                <Link type="button" class="btn btn-primary" to="/create-post">Add post</Link>
+                <Link type="button" className="btn btn-primary" to="/create-post">Add post</Link>
                 <br /><br/>
                 <h4 className="text-center">All new posts : </h4><br />
                 <div className="row">
