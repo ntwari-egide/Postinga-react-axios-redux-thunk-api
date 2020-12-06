@@ -6,17 +6,21 @@ import {useSelector} from "react-redux";
 export default function UsersComponent(){
 
     useEffect(()=>{
-        userActions.get_all_users()
+
+        console.log("DAA ",userActions.get_all_users())
     },[])
 
-    // userStore.subscribe(() => {
-    //     console.log("Store changed: ",userStore.getState())
-    // })
+    userStore.subscribe(() => {
+        return userStore.getState()
+
+    })
 
     const allUsersHandler = () => {
-       return  userStore.getState()
+        // console.log("Store content: ",userStore.getState())
+       // return  userStore.getState()
     }
 
+    // const userstate =
     const allUsers = useSelector(allUsersHandler)
     console.log("Users : ",allUsers)
 

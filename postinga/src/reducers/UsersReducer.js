@@ -5,8 +5,16 @@ export default  function UsersReducer(state = initialState,action){
     switch (action.type) {
         case actionTypes.GET_ALL_USERS:
             // console.log("We have : ",action.payload)
-            return [...state,
-                action.payload]
+            // console.log ("here:",[...state,
+            //     action.payload])
+            // console.log("our state: ",state)
+
+            // return {...state,
+            // initialState: [...state.initialState, action.paylaod]
+            // }
+
+            return action.paylaod
+
 
 
         case actionTypes.GET_USER:
