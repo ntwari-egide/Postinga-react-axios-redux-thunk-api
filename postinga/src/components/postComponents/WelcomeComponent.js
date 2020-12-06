@@ -7,7 +7,7 @@ import * as commentActions from "../../actions/CommentActions"
 import {Link} from "react-router-dom";
 import commentStore from "../../store/CommentStore";
 import CommentComponent from "./CommentComponent";
-
+import store from "../../store";
 const Content = React.createContext()
 
 export default function WelcomeComponent(){
@@ -17,7 +17,7 @@ export default function WelcomeComponent(){
     },[]);
 
     const postState =  () => {
-        return postsStore.getState();
+        return store.getState();
     }
     const dispatch = useDispatch()
 

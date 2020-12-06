@@ -1,32 +1,41 @@
-import React, {useEffect,useContext} from "react";
+import React, {useEffect,useContext,useRef} from "react";
 import * as commentActions from "../../actions/CommentActions";
 import commentStore from "../../store/CommentStore";
 import {useSelector} from "react-redux"
 import store from "../../store";
 
 function CommentComponent({postId}){
-    // commentStore.subscribe(()=>{
-    //     console.log("Comment changed : ",commentStore.getState())
-    // })
+    store.subscribe(()=>{
+        // console.log("Comment changed : ",store.getState())
+    })
+
+    const didRun = useRef(false)
+
     useEffect(()=>{
-        commentActions.get_comment_by_oid(postId)
+        if(!didRun){
+            commentActions.get_comment_by_oid(postId)
+            didRun.current =true
+        }
     },[])
 
     commentActions.get_comment_by_oid(postId)
 
     const commentState =() => {
-        return commentStore.getState()
+        return store.getState()
     }
 
-    console.log("My state : ",commentState)
 
     const allComments = useSelector(commentState)
+    // console.log("My state : ",allComments)
+
+    let allComment = allComments.comment
+
 
     return (
         <div>
             <h6 className="text-center">Comments : </h6><br />
             <div className="row">
-                <ListOfComments allComments={allComments} />
+                <ListOfComments allComments={allComment} />
             </div>
         </div>
     )
