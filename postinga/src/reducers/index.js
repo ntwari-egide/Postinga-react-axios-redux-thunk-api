@@ -4,7 +4,7 @@ import UsersReducer from "./UsersReducer";
 import PostsReducer from "./PostsReducer";
 
 export default combineReducers({
-    CommentReducer,
-    UsersReducer,
-    PostsReducer
+    comment: CommentReducer,
+    users: UsersReducer,
+    posts: PostsReducer
 })

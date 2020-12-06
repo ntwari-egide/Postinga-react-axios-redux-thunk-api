@@ -3,6 +3,7 @@ import * as actions from "./UsersActionTypes"
 import axios from  "axios"
 import store from "../../store";
 
+
 export const get_all_users = async () => {
     const allUsersHandler = await  axios.get(`https://jsonplaceholder.typicode.com/users`)
     store.dispatch(getAllUsersAction(allUsersHandler.data))

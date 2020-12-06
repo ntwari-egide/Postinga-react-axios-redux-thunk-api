@@ -16,6 +16,7 @@ let initialState = [{
 export default function CommentReducer(state= initialState,action){
     switch (action.type) {
         case commentAction.GET_COMMENT_BY_ID:
+            console.log("reached here : ",action.payload)
             return action.payload
         default:
             return state

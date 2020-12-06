@@ -1,9 +1,8 @@
 import React, {useEffect,useContext} from "react";
 import * as commentActions from "../../actions/CommentActions";
 import commentStore from "../../store/CommentStore";
-import {useSelector} from "react-redux";
-
-
+import {useSelector} from "react-redux"
+import store from "../../store";
 
 function CommentComponent({postId}){
     // commentStore.subscribe(()=>{
@@ -13,9 +12,13 @@ function CommentComponent({postId}){
         commentActions.get_comment_by_oid(postId)
     },[])
 
+    commentActions.get_comment_by_oid(postId)
+
     const commentState =() => {
         return commentStore.getState()
     }
+
+    console.log("My state : ",commentState)
 
     const allComments = useSelector(commentState)
 
