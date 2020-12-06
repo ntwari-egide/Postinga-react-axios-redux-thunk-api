@@ -4,5 +4,7 @@ import userStore from "./UsersStore";
 import commentStore from "./CommentStore";
 
 export default combineReducers({
-
+    postsStore,
+    commentStore,
+    userStore
 })
