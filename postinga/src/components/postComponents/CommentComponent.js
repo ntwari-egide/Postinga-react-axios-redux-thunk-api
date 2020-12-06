@@ -9,13 +9,10 @@ function CommentComponent({postId}){
         // console.log("Comment changed : ",store.getState())
     })
 
-    const didRun = useRef(false)
 
     useEffect(()=>{
-        if(!didRun){
-            commentActions.get_comment_by_oid(postId)
-            didRun.current =true
-        }
+        console.log("Comment store changed")
+        commentActions.get_comment_by_oid(postId)
     },[])
 
     commentActions.get_comment_by_oid(postId)
