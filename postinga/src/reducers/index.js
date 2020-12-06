@@ -1,10 +1,8 @@
 import {combineReducers} from "redux";
-import postsStore from "../store/postsStore";
-import userStore from "../store/UsersStore";
-import commentStore from "../store/CommentStore";
+import CommentReducer from "./CommentReducer";
+import UsersReducer from "./UsersReducer";
+import PostsReducer from "./PostsReducer";
 
 export default combineReducers({
-    postsStore,
-    commentStore,
-    userStore
+
 })
